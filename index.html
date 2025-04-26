@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Organización de Voluntarios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .encargado {
+      margin-bottom: 60px;
+    }
+    .encargado h3 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-decoration: underline;
+    }
+    .capitanes-container {
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .capitanes {
+      display: flex;
+      gap: 20px;
+      min-width: max-content;
+      justify-content: flex-start;
+      padding: 10px 0;
+    }
+    .capitan {
+      border: 1px dashed black;
+      padding: 10px;
+      width: 300px;
+      min-width: 300px;
+      text-align: center;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .capitan h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .capitan h5 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .voluntarios {
+      text-align: left;
+      font-size: 14px;
+    }
+    .voluntarios p, .voluntarios li {
+      margin: 4px 0;
+    }
+    /* Nuevo: ocultar todos los encargados inicialmente cuando busques */
+    .encargado.hidden {
+      display: none;
+    }
+    #busqueda {
+      display: block;
+      margin: 0 auto 30px auto;
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="busqueda" placeholder="Buscar voluntario o encargado..." style="width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px;">
+
+  <h2>VIERNES 09 - TURNO MAÑANA</h2>
+ <!-- Caja de búsqueda -->
+ 
+  <div class="encargado">
+    <h3>Ronal Rios</h3>
+    <div class="capitanes-container">
+      <div class="capitanes">
+        
+        <div class="capitan">
+          <h4>av. roca y coronado</h4>
+          <h5>1<br>Adalberto Torrez<br>8H - 10M</h5>
+          <div class="voluntarios">
+            <p>Aguilar Escobar, Samuel</p>
+            <p>Apaza Choque, Franz</p>
+            <p>Argollo Quenta, Cristhian</p>
+            <p>Arias Davalos, Pablo</p>
+            <p>Astete Ricaldi, Domingo</p>
+            <p>Ayala Poma, Ademar</p>
+            <p>Beltran Marca, Edwin</p>
+            <p>Calani Montalvo, Jhonatan</p>
+            <p>Camacho Vargas, Nelson</p>
+            <p>Aceituno Pinto, Carla Lorena</p>
+            <p>Alvarez Lazo, Marilyn</p>
+            <p>Ayala Arteaga, Sheila</p>
+            <p>Borda, Rosmery</p>
+            <p>Castro Veliz, Kesia</p>
+            <p>Chumacero, Yhojara</p>
+            <p>Chumacero Zuna, Jael Lorena</p>
+            <p>Crespo Montaño, Evelyn</p>
+            <p>Cuellar Machado, Sara</p>
+            <p>Diaz Corrales, Meliza</p>
+          </div>
+          
+        </div>
+
+        <div class="capitan">
+          <h4>av. roca y coronado</h4>
+          <h5>2<br>Marcos Gutierrez<br>8H - 10M</h5>
+          <div class="voluntarios">
+            <p>Capriles Laguna, Jose</p>
+            <p>Cayola, David</p>
+            <p>Choque Branez, Isaac</p>
+            <p>Choque, Edison</p>
+            <p>Choque, Rodrigo</p>
+            <p>Chura Condori, Franz</p>
+            <p>Colque Gomez, Cristian</p>
+            <p>Fernández Prado, Fabio</p>
+            <p>Flores Mayta, Rodrigo</p>
+            <p>Fernández Villegas, Melani Alenka</p>
+            <p>Fiorilo Ortega, Belén</p>
+            <p>Fuentes Romero, Alejandra</p>
+            <p>Gómez Calvi, Rocio</p>
+            <p>Gomez, Fabiola</p>
+            <p>Gutierrez Coronado, Adi</p>
+            <p>Gutiérrez Ferreira, Kelin</p>
+            <p>Gutiérrez Gira, María</p>
+            <p>Gutierrez Quispe, Elizabeth</p>
+            <p>Iturri Mendez, Escarleth</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="encargado">
+    <h3>Nestor Gonzales</h3>
+    <div class="capitanes-container">
+      <div class="capitanes">
+        
+        <div class="capitan">
+          <h4>3er anillo externo</h4>
+          <h5>3<br>Juan Carlos Humeres<br>8H</h5>
+          <div class="voluntarios">
+            <p>Flores Pascual, Elvis</p>
+            <p>Hinojoza Maire, Manuel</p>
+            <p>Honorio Aquino, Ruddy</p>
+            <p>Huallpa Valda, Félix</p>
+            <p>Jillapa Verbo, Paul</p>
+            <p>Jiménez Mosquez, Alexander</p>
+            <p>Kim, Seok-jin</p>
+            <p>Llanos Astete, Cristian</p>
+          </div>
+        </div>
+
+        <div class="capitan">
+          <h4>vereda domingo banegas</h4>
+          <h5>4<br>Nelson Gutierrez<br>8H</h5>
+          <div class="voluntarios">
+            <p>Macusaya, Pablo</p>
+            <p>Magne Rojas, Joel</p>
+            <p>Mamani Cruz, Favio</p>
+            <p>Mamani Quispe, Jhonny</p>
+            <p>Marca Salvatierra, Gabriel</p>
+            <p>Medina Condori, Pascual</p>
+            <p>Mendez Camacho, Wilder</p>
+            <p>Mendez Quispe, Gabriel</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+ 
+    <div class="encargado">
+      <h3>Alberto Almendras</h3>
+      <div class="capitanes-container">
+        <div class="capitanes">
+          
+          <div class="capitan">
+            <h4>parqueo 1</h4>
+            <h5>5<br>Milton Melgar<br>9H - 5M</h5>
+            <div class="voluntarios">
+              <p>Mendoza Bernabe, Jhoel</p>
+              <p>Merida, Daniel</p>
+              <p>Miranda Apaza, Job</p>
+              <p>Montaño Vargas, Rubén</p>
+              <p>Moya Fernandez, Brandom</p>
+              <p>Murillo Aruquipa, Franz Gabriel</p>
+              <p>Poma Limachi, José</p>
+              <p>Quisbert Villegas, Samuel</p>
+              <p>Quispe Cosme, Ronald Franz</p>
+              <p>Justiniano, Marlene</p>
+              <p>Lopez, Rosa</p>
+              <p>Makosky Paz, Eraldine</p>
+              <p>Maldonado de, Yolanda</p>
+              <p>Masai, Avigail</p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+   
+ 
+ 
+ 
+    <div class="encargado">
+      <h3>Theo Raynor</h3>
+      <div class="capitanes-container">
+        <div class="capitanes">
+          
+          <div class="capitan">
+            <h4>parqueo 2, novatel y vereda francisco</h4>
+            <h5>6<br>Ramon Mojica<br>9H - 4M</h5>
+            <div class="voluntarios">
+              <p>Quispe, Henry</p>
+              <p>Saavedra Condori, Milton</p>
+              <p>Quispe Huaycho, Marco</p>
+              <p>Saire Mamani, Oved</p>
+              <p>Quispe, Iván</p>
+              <p>Sarzuri Tarqui, Julio</p>
+              <p>Quispe Yanqui, Kevin</p>
+              <p>Rioja Flores, Alexander</p>
+              <p>Rocha Michel, Jared</p>
+              <p>Rodriguez Mamani, Jose</p>
+              <p>Roman Cossio, José</p>
+              <p>Roman Peña, Matias Abel</p>
+              <p>Medina Sosa, María</p>
+              <p>Mejia Castro, Giovana</p>
+              <p>Mejia, Xiomara</p>
+              <p>Méndez Saavedra, Ruth</p>
+            </div>
+          </div>
+    
+          <div class="capitan">
+            <h4>parqueo 2, novatel y vereda francisco</h4>
+            <h5>7<br>Juan Bolivar<br>3H</h5>
+            <div class="voluntarios">
+              <!-- Adicionar voluntários aqui, caso necessário -->
+               <p>Saavedra Condori, Milton</p>
+               <p>Saire Mamani, Oved</p>
+               <p>Sarzuri Tarqui, Julio</p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    <div class="encargado">
+      <h3>Juan Villarroel</h3>
+      <div class="capitanes-container">
+        <div class="capitanes">
+          
+          <div class="capitan">
+            <h4>parqueo 3</h4>
+            <h5>8<br>Oscar Montero<br>18H - 4M</h5>
+            <div class="voluntarios">
+              <p>Segovia Anachuri, Michael</p>
+              <p>Rua, Yoshioka</p>
+              <p>Cazon Sanchez, Carlos</p>
+              <p>Sejas Pascual, Luis Miguel</p>
+              <p>Romero Quiroz, Erwin</p>
+              <p>Wilson Aguilar</p>
+              <p>Sequeiros Piluy, Pablo</p>
+              <p>Suárez Cury, Ronny</p>
+              <p>Machicado Huanca, Moises</p>
+              <p>Sola Mamani, Freddy</p>
+              <p>Tellez, Jhonattan</p>
+              <p>Terceros Andia, Alvaro</p>
+              <p>Tolino Capia, Aldo</p>
+              <p>Tolino Capia, Cesar</p>
+              <p>Viraca Mamani, Vismar</p>
+              <p>Zegarra Portugal, Jhersson</p>
+              <p>Porco, Felipa</p>
+              <p>Vaca Federico, Juan</p>
+              <p>Cespedes, Cristian</p>
+              <p>Becerra, Óscar</p>
+              <p>López Flores, Salomón</p>
+              <p>Román Alcoba, Luis</p>
+              <p>Alcon mamani, Edson</p>
+              <p>Canedo Padilla, Oscar</p>
+              <p>Miranda de Guerrero, Isabel</p>
+              <p>Mogro Aramayo, Romina</p>
+              <p>Montaño de González, Emma</p>
+              <p>Montaño, Maria de</p>
+            </div>
+          </div>
+    
+          <div class="capitan">
+            <h4>parqueo 3 - lateral izquierdo</h4>
+            <h5>9<br>Brandon Huanca<br>3H</h5>
+            <div class="voluntarios">
+              <!-- Adicionar voluntários aqui, se necessário -->
+              
+              <p>Rua, Yoshioka</p>
+              <p>Romero Quiroz, Erwin</p>
+              <p>Suárez Cury, Ronny</p>
+              
+            </div>
+          </div>
+    
+          <div class="capitan">
+            <h4>parqueo 3 - lateral derecho</h4>
+            <h5>10<br>Gaston Zapata<br>3H</h5>
+            <div class="voluntarios">
+              <!-- Adicionar voluntários aqui, se necessário -->
+               <p>Cazon Sanchez, Carlos</p>
+               <p>Wilson Aguilar</p>
+               <p>Machicado Huanca, Moises</p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+   
+
+<div class="encargado">
+  <h3>Roger Justiniano</h3>
+  <div class="capitanes-container">
+    <div class="capitanes">
+      
+      <div class="capitan">
+        <h4>C. Bibosi</h4>
+        <h5>11<br>Juan Carlos Campos<br>3H - 18M</h5>
+        <div class="voluntarios">
+          <p>Méndez Parada, Elihu</p>
+          <p>Maria Albea</p>
+          <p>Soledad Almendras</p>
+          <p>Jaren July Huanca</p>
+          <p>Larissa Arruda</p>
+          <p>Calderón Chávezz, Nancy</p>
+          <p>Ribeiro Ramos Silva, Simoní</p>
+          <p>Guerra Castillo, Maria Angelica</p>
+          <p>edith Huallpa de Zapata</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  <script>
+    const inputBusqueda = document.getElementById('busqueda');
+    const encargados = document.querySelectorAll('.encargado');
+  
+    inputBusqueda.addEventListener('input', function() {
+      const texto = this.value.trim().toLowerCase();
+  
+      encargados.forEach(encargado => {
+        const nombreEncargado = encargado.querySelector('h3')?.textContent.toLowerCase() || '';
+        const voluntarios = encargado.querySelectorAll('.voluntarios p');
+  
+        // Revisar si el nombre del encargado coincide
+        let encontrado = nombreEncargado.includes(texto);
+  
+        // O revisar si algún voluntario coincide
+        if (!encontrado) {
+          voluntarios.forEach(voluntario => {
+            if (voluntario.textContent.toLowerCase().includes(texto)) {
+              encontrado = true;
+            }
+          });
+        }
+  
+        // Mostrar u ocultar el div del encargado
+        if (encontrado) {
+          encargado.style.display = '';
+        } else {
+          encargado.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  
+  
+</body>
+</html>
