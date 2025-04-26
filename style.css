@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .encargado {
+    margin-bottom: 60px;
+  }
+  .encargado h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+  .capitanes-container {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .capitanes {
+    display: flex;
+    gap: 20px;
+    min-width: max-content;
+    justify-content: flex-start;
+    padding: 10px 0;
+  }
+  .capitan {
+    border: 1px dashed black;
+    padding: 10px;
+    width: 300px;
+    min-width: 300px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .capitan h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .capitan h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .voluntarios {
+    text-align: left;
+    font-size: 14px;
+  }
+  .voluntarios p, .voluntarios li {
+    margin: 4px 0;
+  }
+  /* Nuevo: ocultar todos los encargados inicialmente cuando busques */
+  .encargado.hidden {
+    display: none;
+  }
+  #busqueda {
+    display: block;
+    margin: 0 auto 30px auto;
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  header {
+    position: relative;
+    text-align: center;
+    padding-top: 50px; /* Asegura que haya espacio en la parte superior */
+  }
+  
+  .header-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid greenyellow;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: white; /* Color del texto */
+    z-index: 1; /* Asegura que el texto esté encima de la imagen */
+    padding: 20px;
+  }
+  
