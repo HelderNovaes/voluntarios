@@ -183,3 +183,13 @@ h1 {
   color: rgb(0, 0, 0); /* Cor do texto verde */
   background-color: orange;
 }
+.Mapa {
+  width: 100%;              /* Faz a imagem ocupar toda a largura do contêiner */
+  max-width: 800px;         /* Limita a largura máxima */
+  height: auto;             /* Mantém a proporção da imagem */
+  display: block;           /* Remove espaços em branco abaixo da imagem */
+  margin: 20px auto;        /* Centraliza horizontalmente com espaçamento vertical */
+  border: 3px solid #28a745;/* Borda verde */
+  border-radius: 12px;      /* Cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra suave */
+}
