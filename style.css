@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -28,7 +29,7 @@ h2 {
   display: flex;
   gap: 20px;
   min-width: max-content;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 10px 0;
   flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
 }
@@ -43,8 +44,17 @@ h2 {
   border-radius: 8px;
   flex-shrink: 0;
   margin-bottom: 20px; /* Espaçamento entre os itens */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+ 
 }
-
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .capitan h4 {
   font-size: 18px;
   margin-bottom: 5px;
@@ -77,8 +87,15 @@ h2 {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  outline: none;
 }
 
+
+#busqueda:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 4px rgba(40, 167, 69, 0.5);
+}
 header {
   position: relative;
   text-align: center;
@@ -134,11 +151,16 @@ h1 {
 
   .capitan {
       width: 100%; /* Faz os capitães ocuparem toda a largura disponível */
-  }
+  
+    }
 
   .capitanes {
       flex-direction: column; /* Organiza os capitães em uma coluna em vez de linha */
-  }
+   
+   
+        align-items: center;
+    
+    }
 
   header {
       padding-top: 20px; /* Reduz o padding superior para otimizar espaço */
@@ -159,7 +181,13 @@ h1 {
     margin: 5px;
     font-size: 14px;
   }
-
+  .capitanes {
+    flex-direction: column; /* Organiza os capitães em uma coluna em vez de linha */
+ 
+ 
+      align-items: center;
+  
+  }
   .capitan {
     padding: 8px;
     font-size: 14px;
