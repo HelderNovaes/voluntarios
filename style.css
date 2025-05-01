@@ -153,6 +153,53 @@ h1 {
       font-size: 24px; /* Reduz o tamanho da fonte do título para telas menores */
   }
 }
+/* Ajustes extras para celulares muito pequenos (até 400px de largura) */
+@media (max-width: 400px) {
+  body {
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .capitan {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .capitan h4 {
+    font-size: 16px;
+  }
+
+  .capitan h5 {
+    font-size: 14px;
+  }
+
+  .encargado h3 {
+    font-size: 18px;
+  }
+
+  .header-image {
+    width: 120px;
+    height: 120px;
+    border: 3px solid green;
+  }
+
+  h1 {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  #busqueda {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 6px;
+  }
+
+  .Mapa {
+    width: 95%;
+    border-width: 2px;
+    border-radius: 8px;
+  }
+}
 
 /* Efeito de hover para os capitães */
 .capitan:hover {
