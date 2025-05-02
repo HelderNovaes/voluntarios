@@ -113,7 +113,22 @@ color: black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366; /* verde WhatsApp */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
 
+.whatsapp-btn:hover {
+  background-color: #1ebc57;
+}
 h1 {
   color: rgb(0, 0, 0); /* Color del texto */
   z-index: 1; /* Asegura que el texto esté encima de la imagen */
