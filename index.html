@@ -191,6 +191,12 @@ h2 {
 
 /* Pantallas de hasta 480px */
 @media (max-width: 480px) {
+body{
+  margin: 5px;
+  width: calc(100vw - 10px); /* 100% da tela menos as margens (5px de cada lado) */
+    box-sizing: border-box;    /* inclui o padding e borda na largura total */
+
+}
   h1 {
     font-size: 20px;
   }
@@ -200,8 +206,8 @@ h2 {
   }
 
   .header-image {
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
   }
 
   .link-row {
@@ -216,6 +222,18 @@ h2 {
     width: auto;
     flex: 0 1 auto;
   }
+  #slideBackground {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  max-width: 1000px; /* Define el tamaño máximo */
+  aspect-ratio: 1 / 1; /* Mantiene el aspecto cuadrado */
+  margin: 50px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #000; /* Fondo negro para contraste */
+}
 }
 
 
@@ -232,10 +250,10 @@ h2 {
     
   
   <div id="slideBackground">
-    <div class="slide-item active"><img src="img/slide 1.png" alt="Slide 1" /></div>
+    <div class="slide-item active"><img src="img/Slide1.png" alt="Slide 1" /></div>
     <div class="slide-item"><img src="img/slide 3.png" alt="Slide 2" /></div>
     <div class="slide-item"><img src="img/slide 2.jpeg" alt="Slide 3" /></div>
- 
+    <div class="slide-item"><img src="img/slide4.jpeg" alt="Slide 4" /></div>
   </div>
   <h2>Acceso a Turnos</h2>
   <h1>ASAMBLEA ESPECIAL 1</h1>
