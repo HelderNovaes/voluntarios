@@ -5,175 +5,240 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acceso a Turnos</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      text-align: center;
-      overflow-x: hidden;
-    }
+    
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 20px;
-    }
 
-    header {
-      margin-bottom: 20px;
-    }
+/* Estilo general del body */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background-image: url('img/sua-imagem.jpg'); /* Reemplaza con el camino de tu imagen */
+  background-size: cover; /* La imagen cubre toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Fija la imagen mientras se desplaza la página */
+  color: white; /* Texto blanco para contrastar con el fondo */
+  font-family: Arial, sans-serif; /* Tipografía general */
+}
 
-    .header-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid greenyellow;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      display: block;
-      margin: 0 auto 20px auto;
-    }
+/* Estilo para el header */
+header {
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-    h1 {
-      color: #333;
-      font-size: 32px;
-      margin: 10px 0;
-    }
+/* Imagen circular en el header */
+.header-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid greenyellow;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto 20px auto;
+}
 
-    h2 {
-      color: #555;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
+h1 {
+  color: #000000;
+  border-radius: 20px;
+  font-size: 32px;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco suave */
+  padding: 15px 30px; /* Espaciado dentro del título */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar el título */
+  text-align: center;
+}
 
-    .link-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 800px;
-      gap: 20px;
-    }
+/* Subtítulo con fondo suave */
+h2 {
+  color: #001c99;
+  font-size: 24px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco suave */
+  padding: 10px 20px; /* Espaciado dentro del subtítulo */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  text-align: center;
+}
 
-    .link-row {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-
-    .link-row a {
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      border-radius: 8px;
-      text-align: center;
-      flex: 1 1 200px;
-      max-width: 300px;
-      transition: background-color 0.3s, transform 0.2s;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      font-size: 16px;
-    }
-
-    .link-row a:hover {
-      background-color: #2980b9;
-      transform: translateY(-2px);
-    }
-
-    /* Tablets */
-    @media (max-width: 1024px) {
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      .header-image {
-        width: 180px;
-        height: 180px;
-      }
-
-      .link-row a {
-        font-size: 15px;
-      }
-    }
-
-    /* Celulares grandes */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 24px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-
-      .header-image {
-        width: 150px;
-        height: 150px;
-      }
-
-      .link-row a {
-        font-size: 14px;
-        padding: 12px 18px;
-      }
-    }
-
-    /* Celulares pequenos */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 20px;
-      }
-
-      h2 {
-        font-size: 18px;
-      }
-
-      .header-image {
-        width: 130px;
-        height: 130px;
-      }
-
-      .link-row {
-        flex-direction: column;
-        gap: 10px;
-          
-      }
-
-      .link-row a {
-  font-size: 14px;
-  padding: 10px 12px;
-  max-width: 100%;
-  width: auto;
-  flex: 0 1 auto;
-
+/* Contenedor de enlaces */
+.link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  gap: 20px;
 }
 
 
-    }
+/* Contenedor de enlaces */
+.link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  gap: 20px;
+}
+
+/* Fila de enlaces */
+.link-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Estilo de cada enlace */
+.link-row a {
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 200px;
+  max-width: 300px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+/* Estilo del slider cuadrado */
+#slideBackground {
+  position: relative;
+  width: 500px;
+  height: 700px;
+  max-width: 1000px; /* Define el tamaño máximo */
+  aspect-ratio: 1 / 1; /* Mantiene el aspecto cuadrado */
+  margin: 50px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #000; /* Fondo negro para contraste */
+}
+
+.slide-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rellena el cuadrado cortando el exceso */
+  display: block;
+}
+
+.slide-item.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Estilos para pantallas más pequeñas (medias queries) */
+
+/* Pantallas de hasta 1024px */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .header-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .link-row a {
+    font-size: 15px;
+  }
+}
+
+/* Pantallas de hasta 768px */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .header-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .link-row a {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+}
+
+/* Pantallas de hasta 480px */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .header-image {
+    width: 130px;
+    height: 130px;
+  }
+
+  .link-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .link-row a {
+    font-size: 14px;
+    padding: 10px 12px;
+    max-width: 100%;
+    width: auto;
+    flex: 0 1 auto;
+  }
+}
+
+
+
   </style>
 </head>
 <body>
   <header>
-    <img src="img/sua-imagem.jpg" alt="Descripción de la imagen" class="header-image">
+    <!--<img src="img/sua-imagem.jpg" alt="Descripción de la imagen" class="header-image">-->
+    
+    
     <h1>ESTACIONAMIENTO</h1>
   </header>
-
+    
+  
+  <div id="slideBackground">
+    <div class="slide-item active"><img src="img/slide 1.png" alt="Slide 1" /></div>
+    <div class="slide-item"><img src="img/slide 3.png" alt="Slide 2" /></div>
+    <div class="slide-item"><img src="img/slide 2.jpeg" alt="Slide 3" /></div>
+ 
+  </div>
   <h2>Acceso a Turnos</h2>
-  <h2>ASAMBLEA ESPECIAL 1</h2>
+  <h1>ASAMBLEA ESPECIAL 1</h1>
 
   <div class="link-container">
     <div class="link-row">
@@ -194,5 +259,24 @@
 
     <!--<a href="Fechas/11domingotarde.html">CRONOGAMA SOLO CAPITANES</a>-->
   </div>
+  <script>
+  let currentIndex = 0;
+const slides = document.querySelectorAll('.slide-item');
+const totalSlides = slides.length;
+
+// Inicializa: garante que só o primeiro está ativo
+slides.forEach((slide, index) => {
+  slide.classList.toggle('active', index === 0);
+});
+
+function changeSlide() {
+  slides[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % totalSlides;
+  slides[currentIndex].classList.add('active');
+}
+
+// Troca de slide a cada 4 segundos
+setInterval(changeSlide, 7000);
+  </script>
 </body>
 </html>

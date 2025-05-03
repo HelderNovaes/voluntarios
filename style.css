@@ -134,7 +134,43 @@ h1 {
   z-index: 1; /* Asegura que el texto esté encima de la imagen */
   padding: 20px;
 }
-
+.slider {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide img {
+  width: 100%;
+  display: block;
+}
+.active {
+  display: block;
+  opacity: 1;
+}
+/* Opcional: controles de flechas */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
 /* Ajustes de responsividad para pantallas de tamaño mediano */
 @media (max-width: 1024px) {
   .capitanes {
