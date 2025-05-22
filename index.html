@@ -10,11 +10,11 @@
   </style>
 </head>
 <body>
-  <div id="acessoDiv" style="text-align: center; margin-top: 50px;">
-  <h2>Digite a senha para acessar o conteúdo:</h2>
-  <input type="password" id="senhaInput" placeholder="Senha" />
+ <div id="acesso-container">
+  <h2>Digite a senha para acessar:</h2>
+  <input type="password" id="senhaInput" placeholder="Senha">
   <button onclick="verificarSenha()">Entrar</button>
-  <p id="mensagemErro" style="color: red;"></p>
+  <p id="mensagemSenha" style="color: yellow;"></p>
 </div>
 
   <div id="conteudo" style="display: none;">
@@ -71,23 +71,28 @@
   </div>
 
   <script>
-    async function verificarSenha() {
-      const senha = document.getElementById("senhaInput").value;
+   
+   async function verificarSenha() {
+    const senha = document.getElementById("senhaInput").value;
+    const resposta = await fetch("/.netlify/functions/verificar-acesso", {
+      method: "POST",
+      body: JSON.stringify({ senha }),
+    });
 
-      const resposta = await fetch("/.netlify/functions/verificarSenha", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ senha })
-      });
+    const resultado = await resposta.json();
 
-      if (resposta.status === 200) {
-        document.getElementById("senha-container").style.display = "none";
-        document.getElementById("conteudo").style.display = "block";
-      } else {
-        alert("Contraseña incorrecta");
-      }
+    if (resultado.acesso) {
+      document.getElementById("acesso-container").style.display = "none";
+      document.querySelector(".link-container").style.display = "flex";
+    } else {
+      document.getElementById("mensagemSenha").innerText = "Senha incorreta";
     }
+  }
 
+  // Esconde a página até validar senha
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".link-container").style.display = "none";
+     });
     // Slide automático (ativa quando autorizado)
     let currentIndex = 0;
     function iniciarSlides() {
@@ -103,27 +108,6 @@
       setInterval(changeSlide, 4000);
     }
 
-    // Iniciar slide ao desbloquear a senha
-    document.addEventListener('DOMContentLoaded', () => {
-      if (document.getElementById("conteudo").style.display === "block") {
-        iniciarSlides();
-      }
-    });
-    async function verificarSenha() {
-    const senha = document.getElementById("senhaInput").value;
-
-    const resposta = await fetch("/netlify/functions/verificaSenha", {
-      method: "POST",
-      body: JSON.stringify({ senha }),
-    });
-
-    if (resposta.ok) {
-      document.getElementById("acessoDiv").style.display = "none";
-      document.getElementById("conteudo").style.display = "block";
-    } else {
-      document.getElementById("mensagemErro").textContent = "Senha incorreta!";
-    }
-  }
   </script>
 </body>
 </html>
