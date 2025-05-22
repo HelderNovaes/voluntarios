@@ -112,7 +112,7 @@
     async function verificarSenha() {
     const senha = document.getElementById("senhaInput").value;
 
-    const resposta = await fetch("/.netlify/functions/verificaSenha", {
+    const resposta = await fetch("/netlify/functions/verificaSenha", {
       method: "POST",
       body: JSON.stringify({ senha }),
     });
