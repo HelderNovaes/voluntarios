@@ -255,13 +255,13 @@ body{
   <p id="mensagemSenha" style="color: yellow;"></p>
 </div>
 
- 
+ <div id="conteudo" style="display: none;"></div>
     <header>
       <h1>ESTACIONAMIENTO</h1>
       <h1 class="amarelo">LA LISTA PARA LA SEGUNDA ASAMBLEA ESPECIAL DE 23 HASTA 25. SERÁ ENVIADA DE 20 DE MAYO O ANTES, ¡QUEDE ATENTOS!</h1>
       <h2>QUERIDOS VOLUNTARIOS, AGRADECEMOS POR SU DISPOSICION Y POR SU EXCELENTE TRABAJO</h2>
     </header>
- <div id="conteudo" style="display: none;">
+ 
  <div id="slideBackground">
     <div class="slide-item active"><img src="img/Slide1.png" alt="Slide 1" /></div>
     <div class="slide-item"><img src="img/slide4.jpg" alt="Slide 2" /></div>
@@ -336,7 +336,7 @@ body{
 
   // Esconde a página até validar senha
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".link-container").style.display = "none";
+   // document.querySelector(".link-container").style.display = "none";
      });
 
     // Slide automático (ativa quando autorizado)
