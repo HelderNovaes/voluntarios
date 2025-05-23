@@ -6,7 +6,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 200,
       body: JSON.stringify({ acesso: true }),
-    };
+    };v
   } else {
     return {
       statusCode: 401,
