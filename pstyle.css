@@ -1,18 +1,19 @@
 
 /* Estilo general del body */
 body {
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-image: url('img/sua-imagem.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   font-family: Arial, sans-serif;
 }
+
+
 /* Estilo para el header */
 header {
   margin-bottom: 20px;
@@ -132,12 +133,12 @@ h2 {
   z-index: 1;
 }
 
-#acesso-container,
-#conteudo {
-  max-width: 1200px;
-  width: 90%;
-  box-sizing: border-box;
+#conteudo, #acesso-container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
 }
+
 
 #acesso-container {
   display: flex;
@@ -150,6 +151,10 @@ h2 {
 }
 
 #conteudo {
+   
+  margin: 40px auto;
+
+
   display: none;
   width: 100%;
   max-width: 1200px;
