@@ -83,15 +83,6 @@ h2 {
 }
 
 
-/* Contenedor de enlaces */
-.link-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-  gap: 20px;
-}
 
 /* Fila de enlaces */
 .link-row {
@@ -248,68 +239,67 @@ body{
   </style>
 </head>
 <body>
- <div id="acesso-container">
-  <h2>Digite a senha para acessar:</h2>
-  <input type="password" id="senhaInput" placeholder="Senha">
-  <button onclick="verificarSenha()">Entrar</button>
-  <p id="mensagemSenha" style="color: yellow;"></p>
-</div>
+  <div id="acesso-container">
+    <h2>Digite a senha para acessar:</h2>
+    <input type="password" id="senhaInput" placeholder="Senha">
+    <button onclick="verificarSenha()">Entrar</button>
+    <p id="mensagemSenha" style="color: yellow;"></p>
+  </div>
 
- <div id="conteudo" style="display: none;"></div>
+  <!-- TODO O CONTEÚDO PROTEGIDO VAI AQUI -->
+  <div id="conteudo" style="display: none;">
     <header>
       <h1>ESTACIONAMIENTO</h1>
-      <h1 class="amarelo">LA LISTA PARA LA SEGUNDA ASAMBLEA ESPECIAL DE 23 HASTA 25. SERÁ ENVIADA DE 20 DE MAYO O ANTES, ¡QUEDE ATENTOS!</h1>
-      <h2>QUERIDOS VOLUNTARIOS, AGRADECEMOS POR SU DISPOSICION Y POR SU EXCELENTE TRABAJO</h2>
+      <h1 class="amarelo">LA LISTA PARA LA SEGUNDA ASAMBLEA ESPECIAL DE 23 HASTA 25...</h1>
+      <h2>QUERIDOS VOLUNTARIOS, AGRADECEMOS POR SU DISPOSICION...</h2>
     </header>
- 
- <div id="slideBackground">
-    <div class="slide-item active"><img src="img/Slide1.png" alt="Slide 1" /></div>
-    <div class="slide-item"><img src="img/slide4.jpg" alt="Slide 2" /></div>
-    <div class="slide-item"><img src="img/slide 3.png" alt="Slide 3" /></div>
-    <div class="slide-item"><img src="img/Slide 2.png" alt="Slide 4" /></div>
-    <div class="slide-item"><img src="img/slide 5.jpg" alt="Slide 5" /></div>
-    <div class="slide-item"><img src="img/Slide6.jpg" alt="Slide 6" /></div>
-    
+
+    <div id="slideBackground">
+      <div class="slide-item active"><img src="img/Slide1.png" alt="Slide 1" /></div>
+      <div class="slide-item"><img src="img/slide4.jpg" alt="Slide 2" /></div>
+      <div class="slide-item"><img src="img/slide 3.png" alt="Slide 3" /></div>
+      <div class="slide-item"><img src="img/Slide 2.png" alt="Slide 4" /></div>
+      <div class="slide-item"><img src="img/slide 5.jpg" alt="Slide 5" /></div>
+      <div class="slide-item"><img src="img/Slide6.jpg" alt="Slide 6" /></div>
+    </div>
+
+    <h2>Acceso a Turnos</h2>
+    <h1>ASAMBLEA ESPECIAL 1</h1>
+    <h1>GRACIAS POR SU EXCELENTE TRABAJO...</h1>
+
+    <div class="link-container">
+      <div class="link-row">
+        <a href="galeria/galeria.html">GALERIA DE FOTOS</a>
+      </div>
+      <div class="link-row">
+        <a href="Fechas/09viernesmañana.html">VIERNES 09 - TURNO MAÑANA</a>
+        <a href="Fechas/09viernestarde.html">VIERNES 09 - TURNO TARDE</a>
+      </div>
+      <div class="link-row">
+        <a href="Fechas/10sabadomañana.html">SÁBADO 10 - TURNO MAÑANA</a>
+        <a href="Fechas/10sabadotarde.html">SÁBADO 10 - TURNO TARDE</a>
+      </div>
+      <div class="link-row">
+        <a href="Fechas/11domingomañana.html">DOMINGO 11 - TURNO MAÑANA</a>
+        <a href="Fechas/11domingotarde.html">DOMINGO 11 - TURNO TARDE</a>
+      </div>
+
+      <div class="PUNTOS" style="width: 100%; max-width: 600px; margin: 0 auto 20px auto; text-align: center;">
+        <h2>PUNTO DE ENCUENTRO PARA EL TURNO DE LA MAÑANA A LAS 7:00 AM</h2>
+        <iframe
+          src="https://www.google.com/maps?q=-17.785223655323833,-63.211012292688906&hl=es&z=17&output=embed"
+          width="100%"
+          height="350"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <h1 class="amarelo">EN EL TURNO DE LA TARDE A LAS 12:15...</h1>
+      </div>
+    </div>
   </div>
-  <h2>Acceso a Turnos</h2>
-  <h1>ASAMBLEA ESPECIAL 1</h1>
-<h1>GRACIAS POR SU EXCELENTE TRABAJO...</h1>
-  <div class="link-container">
-    <div class="link-row">
-      <a href="galeria/galeria.html">GALERIA DE FOTOS</a>
-     
-    </div>
-    <div class="link-row">
-      <a href="Fechas/09viernesmañana.html">VIERNES 09 - TURNO MAÑANA</a>
-      <a href="Fechas/09viernestarde.html">VIERNES 09 - TURNO TARDE</a>
-    </div>
-    
-    <div class="link-row">
-      <a href="Fechas/10sabadomañana.html">SÁBADO 10 - TURNO MAÑANA</a>
-      <a href="Fechas/10sabadotarde.html">SÁBADO 10 - TURNO TARDE</a>
-    </div>
-    
-    <div class="link-row">
-      <a href="Fechas/11domingomañana.html">DOMINGO 11 - TURNO MAÑANA</a>
-      <a href="Fechas/11domingotarde.html">DOMINGO 11 - TURNO TARDE</a>
-    </div>
-    
-    <div class="PUNTOS" style="width: 100%; max-width: 600px; margin: 0 auto 20px auto; text-align: center;">
-      <h2>PUNTO DE ENCUENTRO PARA EL TURNO DE LA MAÑANA A LAS 7:00 AM</h2>
-      
-      <iframe
-        src="https://www.google.com/maps?q=-17.785223655323833,-63.211012292688906&hl=es&z=17&output=embed"
-        width="100%"
-        height="350"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-      <h1 class="amarelo">EN EL TURNO DE LA TARDE A LAS 12:15 EL PUNTO DE ENCUENTRO ES DONDE ESTÁN SUS CAPITANES.</h1>
-    </div>
-    </div>
- 
+
 
 
   <script>
