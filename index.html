@@ -327,6 +327,7 @@ body{
     if (resultado.acesso) {
   document.getElementById("acesso-container").style.display = "none";
   document.getElementById("conteudo").style.display = "block"; // <- Mostra o conteúdo inteiro
+   document.getElementById(".link-container").style.display = "block";
   iniciarSlides(); // <- Se quiser ativar os slides também
 } else {
   document.getElementById("mensagemSenha").innerText = "Senha incorreta";
@@ -336,7 +337,7 @@ body{
 
   // Esconde a página até validar senha
   document.addEventListener("DOMContentLoaded", () => {
-   // document.querySelector(".link-container").style.display = "none";
+    document.querySelector(".link-container").style.display = "none";
      });
 
     // Slide automático (ativa quando autorizado)
