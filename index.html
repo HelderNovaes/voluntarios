@@ -75,9 +75,10 @@
    async function verificarSenha() {
     const senha = document.getElementById("senhaInput").value;
     const resposta = await fetch("/.netlify/functions/verificar-acesso", {
-      method: "POST",
-      body: JSON.stringify({ senha }),
-    });
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ senha }),
+});
 
     const resultado = await resposta.json();
 
@@ -93,6 +94,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".link-container").style.display = "none";
      });
+
     // Slide automático (ativa quando autorizado)
     let currentIndex = 0;
     function iniciarSlides() {
