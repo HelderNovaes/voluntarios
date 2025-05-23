@@ -12,17 +12,18 @@
 
 /* Estilo general del body */
 body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
-  background-image: url('img/sua-imagem.jpg'); /* Reemplaza con el camino de tu imagen */
-  background-size: cover; /* La imagen cubre toda la pantalla */
-  background-position: center; /* Centra la imagen */
-  background-attachment: fixed; /* Fija la imagen mientras se desplaza la página */
-  color: white; /* Texto blanco para contrastar con el fondo */
-  font-family: Arial, sans-serif; /* Tipografía general */
+  justify-content: center;
+  background-image: url('img/sua-imagem.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
 }
 
 /* Estilo para el header */
@@ -143,29 +144,26 @@ h2 {
   opacity: 1;
   z-index: 1;
 }
-#conteudo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
-  width: 100%;
-}
+
 #acesso-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  max-width: 400px;
-  margin: 80px auto;
-  color: white;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
 }
 
+#conteudo {
+  display: none;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
 #acesso-container input[type="password"] {
   padding: 10px;
   border-radius: 6px;
