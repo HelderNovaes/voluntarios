@@ -313,48 +313,46 @@ body{
 
 
   <script>
-   
-   async function verificarSenha() {
+  async function verificarSenha() {
     const senha = document.getElementById("senhaInput").value;
+
     const resposta = await fetch("/.netlify/functions/verificar-acesso", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ senha }),
-});
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ senha }),
+    });
 
     const resultado = await resposta.json();
 
     if (resultado.acesso) {
-  document.getElementById("acesso-container").style.display = "none";
-  document.getElementById("conteudo").style.display = "block"; // <- Mostra o conteúdo inteiro
-   document.getElementById(".link-container").style.display = "block";
-  iniciarSlides(); // <- Se quiser ativar os slides também
-} else {
-  document.getElementById("mensagemSenha").innerText = "Senha incorreta";
-}
-
+      document.getElementById("acesso-container").style.display = "none";
+      document.getElementById("conteudo").style.display = "block"; // ✅ Mostra tudo
+      iniciarSlides(); // ✅ Ativa slides
+    } else {
+      document.getElementById("mensagemSenha").innerText = "Senha incorreta";
+    }
   }
 
-  // Esconde a página até validar senha
+  // Esconde toda a parte protegida da página ao carregar
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".link-container").style.display = "none";
-     });
+    document.getElementById("conteudo").style.display = "none"; // ✅ Já está assim no HTML, mas reforça
+  });
 
-    // Slide automático (ativa quando autorizado)
-    let currentIndex = 0;
-    function iniciarSlides() {
-      const slides = document.querySelectorAll('.slide-item');
-      const totalSlides = slides.length;
+  // Slide automático
+  let currentIndex = 0;
+  function iniciarSlides() {
+    const slides = document.querySelectorAll('.slide-item');
+    const totalSlides = slides.length;
 
-      function changeSlide() {
-        slides[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % totalSlides;
-        slides[currentIndex].classList.add('active');
-      }
-
-      setInterval(changeSlide, 4000);
+    function changeSlide() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % totalSlides;
+      slides[currentIndex].classList.add('active');
     }
 
-  </script>
+    setInterval(changeSlide, 4000);
+  }
+</script>
+
 </body>
 </html>
