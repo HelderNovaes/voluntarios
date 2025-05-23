@@ -1,0 +1,117 @@
+/* Corpo geral */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#acesso-container input[type="password"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+
+  width: 100%;              /* Ocupa 100% do container pai */
+  max-width: 300px;         /* Mas limita o tamanho máximo */
+  box-sizing: border-box;   /* Garante que padding não ultrapasse largura */
+  display: block;           /* Evita inline alinhado errado */
+  margin-left: auto;        /* Centraliza horizontalmente */
+  margin-right: auto;       /* Centraliza horizontalmente */
+}
+
+
+/* Container da senha */
+#acesso-container {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+#acesso-container h2 {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: #1e3a8a;
+}
+
+#acesso-container input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+#acesso-container input[type="password"]:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+#acesso-container button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#acesso-container button:hover {
+  background-color: #1e40af;
+}
+
+#acesso-container p {
+  margin-top: 15px;
+  color: #eab308;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Conteúdo protegido */
+#conteudo {
+  display: none;
+  width: 100%;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+#acesso-container button {
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto;
+  min-width: 120px;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
