@@ -1,6 +1,5 @@
 exports.handler = async (event) => {
   const { senha } = JSON.parse(event.body);
-
   const senhaCorreta = process.env.SENHA_ACESSO;
 
   if (senha === senhaCorreta) {
