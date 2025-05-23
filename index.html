@@ -68,7 +68,7 @@
         <h1 class="amarelo">EN EL TURNO DE LA TARDE A LAS 12:15 EL PUNTO DE ENCUENTRO ES DONDE ESTÁN SUS CAPITANES.</h1>
       </div>
     </div>
-  </div>
+ 
 
 </div>
   <script>
@@ -84,11 +84,13 @@
     const resultado = await resposta.json();
 
     if (resultado.acesso) {
-      document.getElementById("acesso-container").style.display = "none";
-      document.querySelector(".link-container").style.display = "flex";
-    } else {
-      document.getElementById("mensagemSenha").innerText = "Senha incorreta";
-    }
+  document.getElementById("acesso-container").style.display = "none";
+  document.getElementById("conteudo").style.display = "block"; // <- Mostra o conteúdo inteiro
+  iniciarSlides(); // <- Se quiser ativar os slides também
+} else {
+  document.getElementById("mensagemSenha").innerText = "Senha incorreta";
+}
+
   }
 
   // Esconde a página até validar senha
