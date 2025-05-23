@@ -1,69 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="instyle.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="instyle.css" />
   <title>Acceso a Turnos</title>
+  <style>
+    /* Estilo básico para centralizar tudo */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
 
+    #acesso-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    #acesso-container input[type="password"] {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    #acesso-container button {
+      padding: 12px 24px;
+      border-radius: 6px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+    }
+
+    #acesso-container button:hover {
+      background-color: #2980b9;
+    }
+
+    #mensagemSenha {
+      margin-top: 10px;
+      color: red;
+      font-weight: bold;
+    }
+
+    #conteudo {
+      display: none;
+      padding: 40px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
   <div id="acesso-container">
     <h2>Digite a senha para acessar:</h2>
-    <input type="password" id="senhaInput" placeholder="Senha">
+    <input type="password" id="senhaInput" placeholder="Senha" />
     <button onclick="verificarSenha()">Entrar</button>
-    <p id="mensagemSenha" style="color: yellow;"></p>
+    <p id="mensagemSenha"></p>
   </div>
 
-  <!-- TODO O CONTEÚDO PROTEGIDO VAI AQUI -->
-  <div id="conteudo" style="display: none;">
-   <a href="inicio.html"></a>
+  <div id="conteudo">
+    <a href="inicio.html">ASAMBLEA ESPECIAL BOLIVIA 1</a>
   </div>
-
-
 
   <script>
-  async function verificarSenha() {
-    const senha = document.getElementById("senhaInput").value;
+    async function verificarSenha() {
+      const senha = document.getElementById("senhaInput").value;
 
-    const resposta = await fetch("/.netlify/functions/verificar-acesso", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ senha }),
+      const resposta = await fetch("/.netlify/functions/verificar-acesso", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ senha }),
+      });
+
+      const resultado = await resposta.json();
+
+      if (resultado.acesso) {
+        document.getElementById("acesso-container").style.display = "none";
+        document.getElementById("conteudo").style.display = "block";
+      } else {
+        document.getElementById("mensagemSenha").innerText = "Senha incorreta";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("conteudo").style.display = "none";
     });
-
-    const resultado = await resposta.json();
-
-    if (resultado.acesso) {
-      document.getElementById("acesso-container").style.display = "none";
-      document.getElementById("conteudo").style.display = "block"; // ✅ Mostra tudo
-      iniciarSlides(); // ✅ Ativa slides
-    } else {
-      document.getElementById("mensagemSenha").innerText = "Senha incorreta";
-    }
-  }
-
-  // Esconde toda a parte protegida da página ao carregar
-  document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("conteudo").style.display = "none"; // ✅ Já está assim no HTML, mas reforça
-  });
-
-  // Slide automático
-  let currentIndex = 0;
-  function iniciarSlides() {
-    const slides = document.querySelectorAll('.slide-item');
-    const totalSlides = slides.length;
-
-    function changeSlide() {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % totalSlides;
-      slides[currentIndex].classList.add('active');
-    }
-
-    setInterval(changeSlide, 4000);
-  }
-</script>
+  </script>
 
 </body>
 </html>
