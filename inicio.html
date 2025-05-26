@@ -63,6 +63,10 @@
 
 
   <script>
+      if (localStorage.getItem("acessoLiberado") !== "true") {
+    // Usuário não autorizado, redireciona para a página de login
+    window.location.href = "/index.html";
+  }
   async function verificarSenha() {
     const senha = document.getElementById("senhaInput").value;
 
