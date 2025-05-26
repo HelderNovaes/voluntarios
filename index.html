@@ -98,7 +98,7 @@
 
   <script>
   
-  async function verificarSenha() {
+async function verificarSenha() {
   const senha = document.getElementById("senhaInput").value;
 
   const resposta = await fetch("/.netlify/functions/verificar-acesso", {
@@ -110,33 +110,15 @@
   const resultado = await resposta.json();
 
   if (resultado.acesso) {
-    // Esconde o formulário de senha
-    document.getElementById("acesso-container").style.display = "none";
+    // Marca que o usuário está autorizado
+    localStorage.setItem("acessoLiberado", "true");
 
-    // Busca e carrega o conteúdo da página protegida
-    fetch("inicio.html")
-      .then(res => res.text())
-      .then(html => {
-        const conteudoDiv = document.getElementById("conteudo");
-        conteudoDiv.innerHTML = html;
-        conteudoDiv.style.display = "block";
-      })
-      .catch(err => {
-        console.error("Erro ao carregar a página protegida:", err);
-        document.getElementById("mensagemSenha").innerText = "Erro ao carregar o conteúdo.";
-      });
+    // Redireciona para a página protegida
+    window.location.href = "/inicio.html";
   } else {
     document.getElementById("mensagemSenha").innerText = "Senha incorreta";
   }
 }
-
-// Ao carregar a página, esconde o conteúdo protegido
-document.addEventListener("DOMContentLoaded", () => {
-  const conteudoDiv = document.getElementById("conteudo");
-  if (conteudoDiv) {
-    conteudoDiv.style.display = "none";
-  }
-});
 
   </script>
 
