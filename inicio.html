@@ -62,16 +62,31 @@
     </div>
 
 
-  <script>// Logo no início do script
-if (localStorage.getItem("acessoLiberado") !== "true") {
-  window.location.href = "/index.html";
-}
+  <script>
+  async function verificarSenha() {
+    const senha = document.getElementById("senhaInput").value;
 
-// Esconde o conteúdo até garantir que a página está pronta (se quiser)
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("conteudo").style.display = "block"; // mostra conteúdo normalmente
-  iniciarSlides(); // função que você já usa para ativar os slides
-});
+    const resposta = await fetch("/.netlify/functions/verificar-acesso", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ senha }),
+    });
+
+    const resultado = await resposta.json();
+
+    if (resultado.acesso) {
+      document.getElementById("acesso-container").style.display = "none";
+      document.getElementById("conteudo").style.display = "block"; // ✅ Mostra tudo
+      iniciarSlides(); // ✅ Ativa slides
+    } else {
+      document.getElementById("mensagemSenha").innerText = "Senha incorreta";
+    }
+  }
+
+  // Esconde toda a parte protegida da página ao carregar
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("conteudo").style.display = "none"; // ✅ Já está assim no HTML, mas reforça
+  });
 
   // Slide automático
   let currentIndex = 0;
