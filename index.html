@@ -95,6 +95,7 @@
   </div>
 
   <script>
+    
     async function verificarSenha() {
       const senha = document.getElementById("senhaInput").value;
 
@@ -116,7 +117,30 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("conteudo").style.display = "none";
+    })
+
+async function verificarSenha() {
+    const senha = document.getElementById("senhaInput").value;
+
+    const resposta = await fetch("/.netlify/functions/verificar-acesso", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ senha }),
     });
+
+    const resultado = await resposta.json();
+
+    if (resultado.acesso) {
+      // ✅ Salva no localStorage que o usuário tem acesso
+      localStorage.setItem("acessoLiberado", "true");
+
+      // ✅ Redireciona para a página protegida
+      window.location.href = "/inicio.html";
+    } else {
+      document.getElementById("mensagemSenha").innerText = "Senha incorreta";
+    }
+  }
+
   </script>
 
 </body>
