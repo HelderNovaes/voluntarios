@@ -90,10 +90,12 @@
     <p id="mensagemSenha"></p>
   </div>
 
-  <div id="conteudo">
+</body>
+
+<!--<div id="conteudo">
     <a href="inicio.html">ESTACIONAMIENTO ASAMBLEA ESPECIAL 1</a>
   </div>
-
+-->
   <script>
     async function verificarSenha() {
       const senha = document.getElementById("senhaInput").value;
@@ -117,6 +119,22 @@
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("conteudo").style.display = "none";
     });
+
+
+    if (resultado.acesso) {
+  document.getElementById("acesso-container").style.display = "none";
+
+  // Carrega conteúdo da página protegida
+  fetch("inicio.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("conteudo").innerHTML = html;
+      document.getElementById("conteudo").style.display = "block";
+    });
+} else {
+  document.getElementById("mensagemSenha").innerText = "Senha incorreta";
+}
+
   </script>
 
 </body>
