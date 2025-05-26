@@ -97,43 +97,46 @@
   </div>
 
   <script>
-    async function verificarSenha() {
-      const senha = document.getElementById("senhaInput").value;
+  
+  async function verificarSenha() {
+  const senha = document.getElementById("senhaInput").value;
 
-      const resposta = await fetch("/.netlify/functions/verificar-acesso", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ senha }),
+  const resposta = await fetch("/.netlify/functions/verificar-acesso", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ senha }),
+  });
+
+  const resultado = await resposta.json();
+
+  if (resultado.acesso) {
+    // Esconde o formulário de senha
+    document.getElementById("acesso-container").style.display = "none";
+
+    // Busca e carrega o conteúdo da página protegida
+    fetch("inicio.html")
+      .then(res => res.text())
+      .then(html => {
+        const conteudoDiv = document.getElementById("conteudo");
+        conteudoDiv.innerHTML = html;
+        conteudoDiv.style.display = "block";
+      })
+      .catch(err => {
+        console.error("Erro ao carregar a página protegida:", err);
+        document.getElementById("mensagemSenha").innerText = "Erro ao carregar o conteúdo.";
       });
-
-      const resultado = await resposta.json();
-
-      if (resultado.acesso) {
-        document.getElementById("acesso-container").style.display = "none";
-        document.getElementById("conteudo").style.display = "block";
-      } else {
-        document.getElementById("mensagemSenha").innerText = "Senha incorreta";
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("conteudo").style.display = "none";
-    });
-
-
-    if (resultado.acesso) {
-  document.getElementById("acesso-container").style.display = "none";
-
-  // Carrega conteúdo da página protegida
-  fetch("inicio.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("conteudo").innerHTML = html;
-      document.getElementById("conteudo").style.display = "block";
-    });
-} else {
-  document.getElementById("mensagemSenha").innerText = "Senha incorreta";
+  } else {
+    document.getElementById("mensagemSenha").innerText = "Senha incorreta";
+  }
 }
+
+// Ao carregar a página, esconde o conteúdo protegido
+document.addEventListener("DOMContentLoaded", () => {
+  const conteudoDiv = document.getElementById("conteudo");
+  if (conteudoDiv) {
+    conteudoDiv.style.display = "none";
+  }
+});
 
   </script>
 
